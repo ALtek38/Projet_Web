@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-
-
 	$('#Partie_2_1 button').click(function() {
 		$("#Partie_3_1").show();
 		$("#Partie_3_2").hide();
@@ -34,15 +32,17 @@ $(document).ready(function(){
 		$('#fin_heure_dispo2').text(offreur.fin_heure_dispo);
 		$('#fin_minute_dispo2').text(offreur.fin_minute_dispo);
 
-        $("#liste_dyna").append("<label>"
-                                + offreur.produits[offreur.produits.length-1].nom
-                                + "</label><input type='radio'><br>");
+        clear_list("#liste_dyna");
+        print_list("#liste_dyna");
 	});
 
 	$('#Partie_2_2 button').click(function() {
 		$("#Partie_3_2").show();
 		$("#Partie_3_1").hide();
 
+        remove_item('#liste_dyna');
+        clear_list("#liste_dyna");
+        print_list("#liste_dyna");
 	});
 });
 
@@ -61,6 +61,31 @@ function Personne(nom, adresse, mail) {
 
     this.ajoutProd = function(produit) {
         this.produits.push(produit);
+    }
+}
+
+function clear_list(blocID) {
+    $(blocID).html('');
+}
+
+function print_list(blocID) {
+    for (let i = 0; i < offreurs.length; i++) {
+        for (let j = 0; j < offreurs[i].produits.length; j++) {
+            $(blocID).append("<input type='radio' name='produit' value='"+ offreurs[i].produits[j].nom + "'>"
+                             + offreurs[i].produits[j].nom
+                             + "<br>");
+        }
+    }
+}
+
+function remove_item(blocID) {
+    var nomProduit = $(blocID + ' input:checked').val();
+    for (let i = 0; i < offreurs.length; i++) {
+        for (let j = 0; j < offreurs[i].produits.length; j++) {
+            if (offreurs[i].produits[j].nom == nomProduit) {
+                offreurs[i].produits.splice(j, 1);
+            }
+        }
     }
 }
 

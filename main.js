@@ -4,7 +4,7 @@ $(document).ready(function(){
 		$("#Partie_3_1").show();
 		$("#Partie_3_2").hide();
 
-        var offerer = new Personne($('#name').val(),
+        var offerer = new Person($('#name').val(),
                                    $('#address').val(),
                                    $('#mail').val());
         offerers.push(offerer);
@@ -15,44 +15,43 @@ $(document).ready(function(){
                               $('#year').val(),
                               $('#hour_start').val(),
                               $('#min_start').val(),
-                              $('#fin_heure_dispo1').val(),
-                              $('#fin_minute_dispo2').val());
+                              $('#hour_end').val(),
+                              $('#min_end').val());
 
         offerer.ajoutProd(product);
 
 		$('#name_offerer').text(offerer.name);
 		$('#address_offerer').text(offerer.address);
 		$('#name_product').text(offerer.product);
-		$('#name_product2').text(offerer.product);
-		$('#jour_dispo2').text(offerer.jour_dispo);
-		$('#mois_dispo2').text(offerer.mois_dispo);
-		$('#annee_dispo2').text(offerer.annee_dispo);
-		$('#debut_heure_dispo2').text(offerer.debut_heure_dispo);
-		$('#debut_minute_dispo2').text(offerer.debut_minute_dispo);
-		$('#fin_heure_dispo2').text(offerer.fin_heure_dispo);
-		$('#fin_minute_dispo2').text(offerer.fin_minute_dispo);
+		$('#day_avail').text(offerer.day_avail);
+		$('#month_avail').text(offerer.month_dispo);
+		$('#year_avail').text(offerer.year_dispo);
+		$('#hour_start_avail').text(offerer.debut_heure_dispo);
+		$('#minute_start_avail').text(offerer.debut_minute_dispo);
+		$('#hour_end_avail').text(offerer.fin_heure_dispo);
+		$('#min_end_avail').text(offerer.fin_minute_dispo);
 
-        clear_list("#liste_dyna");
-        print_list("#liste_dyna");
+        clear_list("#list_product");
+        print_list("#list_product");
 	});
 
 	$('#Partie_2_2 button').click(function() {
 		$("#Partie_3_2").show();
 		$("#Partie_3_1").hide();
 
-        remove_item('#liste_dyna');
-        clear_list("#liste_dyna");
-        print_list("#liste_dyna");
+        remove_item('#list_product');
+        clear_list("#list_product");
+        print_list("#list_product");
 	});
 });
 
-function Product(name, jour, mois, annee, heure, min, heure_fin, min_fin) {
+function Product(name, day, month, year, hour, min, hour_end, min_end) {
     this.name = name;
-    this.debut = Date(annee, mois, jour, heure, min);
-    this.fin = Date(annee, mois, jour, heure_fin, min_fin);
+    this.debut = Date(year, month, day, hour, min);
+    this.fin = Date(year, month, day, hour_end, min_end);
 }
 
-function Personne(name, address, mail) {
+function Person(name, address, mail) {
     this.name = name;
     this.address = address;
     this.mail = mail;

@@ -74,6 +74,8 @@ body
 	overflow-y: scroll;
 	border-radius:1em;
 	box-sizing: border-box;
+	padding-left:1%;
+	padding-right:1%;
 }
 
 #Partie_2_2
@@ -88,7 +90,8 @@ body
 	height:90%;
 	margin-top:5%;
 	border-radius:1em;
-	
+	padding-left:1%;
+	padding-right:1%;
 }
 
 

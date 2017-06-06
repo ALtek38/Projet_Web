@@ -73,7 +73,7 @@ body
 	margin-top:5%;
 	overflow-y: scroll;
 	border-radius:1em;
-	box-sizing: border-box;
+	
 	padding-left:1%;
 	padding-right:1%;
 }

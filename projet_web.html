@@ -1,75 +1,71 @@
 <!DOCTYPE html>
 <html lang='fr'>
-  <head>
-   <link rel="shortcut icon" type="image/x-icon" href="assets/Tupp_Trans.png" />
-    <meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="assets/Style.css">
-	<title>Tupper-Trade</title>
-	<script
-		src="https://code.jquery.com/jquery-3.2.1.min.js"
-		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-		crossorigin="anonymous"></script>
-	<script src="main.js"></script>
-  </head>
-  <body>
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/Tupp_Trans.png" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="assets/Style.css">
+    <title>Tupper-Trade</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
     <div id="Partie_1">
-		<div id="Partie_1_1">
-		<br>
-			<img alt="logo" src="assets/Logo.png">
-			<br><br><br>
-			<span class="capital">L</span>e but de Tupper-Trade est de limiter le gachis dû au fait que, le plus souvent, les ménages jetent la nourriture dont la date de consommation est proche.<br>
-			<span class="capital">P</span>our se faire, Tupper-Trade propose un service en ligne qui permet aux
-			personnes souhaitant donner de la nourriture qu'ils ne consommeront pas et aux
-			personnes souhaitant la récuperer de se joindre plus simplement.<br>
-			<br><br>
-			<span class="capital">S</span>i vous etes dans l'une ou l'autre de ces situations, il vous suffit de remplir l'encadré correspondant ci-dessous.
-			<br><br>
-		</div>
-	</div>
-	<div id="Partie_2">
-	    <div id="Partie_2_1">
-			<form>
-				<p><span class="capital">V</span>euillez completez ce formulaire pour nous indiquer ce que vous souhaité(e) donner:<p>
+        <div id="Partie_1_1">
+            <br>
+            <img alt="logo" src="assets/Logo.png">
+            <br><br><br>
+            <span class="capital">L</span>e but de Tupper-Trade est de limiter le gachis dû au fait que, le plus souvent, les ménages jetent la nourriture dont la date de consommation est proche.<br>
+            <span class="capital">P</span>our se faire, Tupper-Trade propose un service en ligne qui permet aux personnes souhaitant donner de la nourriture qu'ils ne consommeront pas et aux personnes souhaitant la récuperer de se joindre plus simplement.<br>
+            <br><br>
+            <span class="capital">S</span>i vous etes dans l'une ou l'autre de ces situations, il vous suffit de remplir l'encadré correspondant ci-dessous.
+            <br><br>
+        </div>
+    </div>
+    <div id="Partie_2">
+        <div id="Partie_2_1">
+            <form>
+                <p><span class="capital">V</span>euillez completez ce formulaire pour nous indiquer ce que vous souhaité(e) donner:
+                    <p>
+                        <br>
+                        <label> Nom: </label><input id="name" type="text"><br>
+                        <br>
+                        <label> Adresse: </label><input id="address" type="text"><br>
+                        <br>
+                        <label> Produit donné: </label><input id="product" type="text"><br>
+                        <br>
+                        <label> Adresse mail: </label><input id="mail" type="text"><br>
+                        <br>
+                        <label> Disponibilité:<br> </label><input id="day" type="number" min="1" max="31" placeholder="(j)j"><input id="month" type="number" min="1" max="12" placeholder="(m)m"><input id="year" type="number" min="0" max="99" placeholder="(a)a">                        <br>
+                        <br>
+                        <label> Plage horaire:
 				<br>
-				<label> Nom: </label><input id="name" type="text"><br>
-				<br>
-				<label> Adresse: </label><input id="address" type="text"><br>
-				<br>
-				<label> Produit donné: </label><input id="product" type="text"><br>
-				<br>
-				<label> Adresse mail: </label><input id="mail" type="text"><br>
-				<br>
-				<label> Disponibilité:<br> </label><input id="day" type="number" min="1" max="31" placeholder="(j)j"><input id="month" type="number" min="1" max="12" placeholder="(m)m"><input id="year" type="number" min="0" max="99" placeholder="(a)a"> <br>
-				<br>
-				<label> Plage horaire:
-				<br>
-      </label>Entre<br> <input id="hour_start" type="number" min="0" max="23" placeholder="(h)h">heure<input id="min_start" type="number" min="0" max="59" placeholder="(m)m">heure<br>
-				et<br>
-				<input id="hour_end" type="number" min="0" max="23" placeholder="(h)h">heure<input id="min_end" type="number" min="0" max="59" placeholder="(m)m">heure
-				<br><br>
-				<button type='button'>Je valide</button>
-			</form>
-	   </div>
-	<br>
-	   <div id="Partie_2_2">
-       <p><span class='capital'>V</span>euillez sélectionner le product que vous voulez récupérer:<p>
-		   <form id="list_product"></form>
-		   <br><br>
-		   <button type='button'>Je valide</button>
-	   </div>
-	<br><br>
-	</div>
-	<div id="Partie_3_1" hidden>
-		<span class="capital">N</span>ous vous remercions, il ne reste plus qu'à attendre que quelqu'un souhaite récuperer votre don (nous vous enverrons une alerte par mail lorsque cela arrivera).
-		<br><br>
-	</div>
-	<div id="Partie_3_2" hidden>
-	    <span class="capital">O</span>k très bien <span id='name_offerer'></span>
-      vous attend au <span id='address_offerer'></span>
-      pour retirer <span id='name_product'></span>. Vous pouvez vous y rendre le
-      <span id='day_avail'></span>/<span id='month_avail'></span>/<span id='year_avail'></span>
-      entre <span id='hour_start_avail'></span>h <span id='minute_start_avail'></span>
-      et <span id='hour_end_avail'></span>h <span id='min_end_avail'></span>.
-	</div>
-  </body>
+      </label>Entre<br> <input id="hour_start" type="number" min="0" max="23" placeholder="(h)h">heure<input id="min_start" type="number" min="0" max="59" placeholder="(m)m">heure<br> et
+                        <br>
+                        <input id="hour_end" type="number" min="0" max="23" placeholder="(h)h">heure<input id="min_end" type="number" min="0" max="59" placeholder="(m)m">heure
+                        <br><br>
+                        <button type='button'>Je valide</button>
+            </form>
+        </div>
+        <br>
+        <div id="Partie_2_2">
+            <p><span class='capital'>V</span>euillez sélectionner le produit que vous voulez récupérer:
+                <p>
+                    <form id="list_product"></form>
+                    <br><br>
+                    <button type='button'>Je valide</button>
+        </div>
+        <br><br>
+    </div>
+    <div id="Partie_3_1" hidden>
+        <span class="capital">N</span>ous vous remercions, il ne reste plus qu'à attendre que quelqu'un souhaite récuperer votre don (nous vous enverrons une alerte par mail lorsque cela arrivera).
+        <br><br>
+    </div>
+    <div id="Partie_3_2" hidden>
+        <span class="capital">O</span>k très bien <span id='name_offerer'></span> vous attend au <span id='address_offerer'></span> pour retirer <span id='name_product'></span>. Vous pouvez vous y rendre le
+        <span id='day_avail'></span>/<span id='month_avail'></span>/<span id='year_avail'></span> entre <span id='hour_start_avail'></span>h <span id='minute_start_avail'></span> et <span id='hour_end_avail'></span>h <span id='min_end_avail'></span>.
+    </div>
+</body>
+
 </html>

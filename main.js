@@ -7,7 +7,9 @@ $(document).ready(function(){
         var offerer = new Person($('#name').val(),
                                    $('#address').val(),
                                    $('#mail').val())
+        offerer.id = offerers[0]
         offerers.push(offerer)
+        offerers[0]++
 
         product = new Product($('#product').val(),
                               $('#day').val(),
@@ -56,10 +58,12 @@ function Person(name, address, mail) {
     this.address = address
     this.mail = mail
 
-    this.products = []
+    this.products = [0]
 
     this.ajoutProd = function(product) {
         this.products.push(product)
+        this.products[this.products.length - 1].id = this.products[0]
+        this.products[0]++
     }
 }
 
@@ -68,10 +72,12 @@ function clear_list(blocID) {
 }
 
 function print_list(blocID) {
-    for (let i = 0; i < offerers.length; i++) {
-        for (let j = 0; j < offerers[i].products.length; j++) {
+    for (let i = 1; i < offerers.length; i++) {
+        for (let j = 1; j < offerers[i].products.length; j++) {
             $(blocID).append("<input type='radio' name='product' value='"
-                             +offerers[i].products[j].name + "'>"
+                             + offerers[i].products[j].name
+                             + offerers[i].id
+                             + offerers[i].products[j].id + "'>"
                              + offerers[i].products[j].name
                              + "<br>")
         }
@@ -79,14 +85,17 @@ function print_list(blocID) {
 }
 
 function remove_item(blocID) {
-    var nameProduct = $(blocID + ' input:checked').val()
-    for (let i = 0; i < offerers.length; i++) {
-        for (let j = 0; j < offerers[i].products.length; j++) {
-            if (offerers[i].products[j].name == nameProduct) {
+    var valueID = $(blocID + ' input:checked').val()
+    for (let i = 1; i < offerers.length; i++) {
+        for (let j = 1; j < offerers[i].products.length; j++) {
+            let idProduct = offerers[i].products[j].name
+                            + offerers[i].id
+                            + offerers[i].products[j].id
+            if (idProduct == valueID) {
                 offerers[i].products.splice(j, 1)
             }
         }
     }
 }
 
-var offerers = []
+var offerers = [0]

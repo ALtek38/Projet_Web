@@ -22,14 +22,14 @@ $(document).ready(function(){
 
 		$('#name_offerer').text(offerer.name)
 		$('#address_offerer').text(offerer.address)
-		$('#name_product').text(offerer.product)
-		$('#day_avail').text(offerer.day_avail)
-		$('#month_avail').text(offerer.month_dispo)
-		$('#year_avail').text(offerer.year_dispo)
-		$('#hour_start_avail').text(offerer.debut_heure_dispo)
-		$('#minute_start_avail').text(offerer.debut_minute_dispo)
-		$('#hour_end_avail').text(offerer.fin_heure_dispo)
-		$('#min_end_avail').text(offerer.fin_minute_dispo)
+		$('#name_product').text(product.name)
+		$('#day_avail').text(product.start.getDate())
+		$('#month_avail').text(product.start.getMonth())
+		$('#year_avail').text(product.start.getFullYear())
+		$('#hour_start_avail').text(product.start.getHours())
+		$('#minute_start_avail').text(product.start.getMinutes())
+		$('#hour_end_avail').text(product.end.getHours())
+		$('#min_end_avail').text(product.end.getMinutes())
 
         clear_list("#list_product")
         print_list("#list_product")
@@ -47,8 +47,8 @@ $(document).ready(function(){
 
 function Product(name, day, month, year, hour, min, hour_end, min_end) {
     this.name = name
-    this.debut = Date(year, month, day, hour, min)
-    this.fin = Date(year, month, day, hour_end, min_end)
+    this.start = new Date(year, month, day, hour, min)
+    this.end = new Date(year, month, day, hour_end, min_end)
 }
 
 function Person(name, address, mail) {

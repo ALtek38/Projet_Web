@@ -136,21 +136,25 @@ nav
 	box-shadow: 7px 0px 7px rgb(50,50,50); 
 }
 
+#Full
+{
+	margin-top:5%;
+}
+
 #Allan
 {
-	text-align:left;
-	margin-left: 15%;
+	margin-left:15%;
+	color:rgb(151,169,49);
 }
 
 #Bruno
 {
-	text-align:right;
-	margin-right: 15%;
+	margin-left:15%;
+	color:rgb(44,95,140);
 }
 
 #Paul
 {
-	text-align:left;
-	margin-left: 15%;
-	
+	margin-left:15%;
+	color:rgb(236,90,30);
 }

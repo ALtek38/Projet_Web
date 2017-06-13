@@ -8,6 +8,13 @@ body
 	font-family:"comicbd.ttf";
 }
 
+nav
+{
+	margin-top:1%;
+	color:black;
+	text-align:center;
+}
+
 .capital
 {
 	font-size: 200%;
@@ -112,6 +119,7 @@ body
 	margin-right: 15%;
 	margin-left: 15%;
 	border-radius:1em;
+	padding-left:1%;
 	box-shadow: 7px 0px 7px rgb(50,50,50); 
 }
 #Partie_3_2
@@ -124,5 +132,25 @@ body
 	margin-right: 15%;
 	margin-left: 15%;
 	border-radius:1em;
+	padding-left:1%;
 	box-shadow: 7px 0px 7px rgb(50,50,50); 
+}
+
+#Allan
+{
+	text-align:left;
+	margin-left: 15%;
+}
+
+#Bruno
+{
+	text-align:right;
+	margin-right: 15%;
+}
+
+#Paul
+{
+	text-align:left;
+	margin-left: 15%;
+	
 }
